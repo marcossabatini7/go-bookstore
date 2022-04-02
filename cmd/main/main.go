@@ -11,7 +11,8 @@ import (
 func main() {
 	r := mux.NewRouter()
 
-	routes.RegisterBookRoutes(r)
+	api := r.PathPrefix("/api").Subrouter()
+	routes.RegisterBookRoutes(api)
 	http.Handle("/", r)
 
 	log.Fatal(http.ListenAndServe(":4000", r))
