@@ -37,6 +37,11 @@ func (b *Book) CreateBook() *Book {
 	return b
 }
 
+func (b *Book) UpdateBook(Id int64) *Book {
+	db.Where("ID=?", Id).Updates(b)
+	return b
+}
+
 func DeleteBook(Id int64) Book {
 	var book Book
 	db.Where("ID=?", Id).Delete(book)
