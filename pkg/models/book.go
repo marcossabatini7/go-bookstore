@@ -38,7 +38,7 @@ func (b *Book) Create() *Book {
 }
 
 func (b *Book) Update(Id int64) *Book {
-	db.Where("ID=?", Id).Updates(b)
+	db.Where("ID=?", Id).Updates(&b)
 	return b
 }
 
