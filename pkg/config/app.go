@@ -10,7 +10,7 @@ var (
 )
 
 func Connect() {
-	dsn := "host=localhost user=admin password=podman dbname=g_bookstore port=5432 sslmode=disable TimeZone=America/Sao_Paulo"
+	dsn := "host=localhost user=admin password=podman dbname=go_bookstore port=5432 sslmode=disable TimeZone=America/Sao_Paulo"
 
 	d, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
