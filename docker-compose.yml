@@ -1,0 +1,14 @@
+services:
+  go-bookstore:
+    container_name: go-bookstore
+    image: docker.io/library/postgres:latest
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: podman
+      POSTGRES_DB: bookstore
+    networks:
+      - mcnet
+networks:
+  mcnet:
